@@ -1,14 +1,17 @@
 # OpenSpinDrift_nx
 
-Nintendo Switch homebrew wrapper for the **OpenSpinDrift** SDL2 game library.
-It is a small native Android shim: it loads the game's own `libmain.so`, binds
+Nintendo Switch homebrew android wrapper for **[Mr. Matt's OpenSpinDrift (Sonic 3D Blast)](https://themrmatt.net/projects/openspindrift)**.
+This is a small native Android shim: it loads the game's own `libmain.so`, binds
 its SDL2/GLES2/libc imports to the Switch build of SDL2 and mesa GLES2, and
 calls its `SDL_main` entry point. The wrapper contains no game code and no game
-data — you supply the game files from your own copy.
+data — you have to supply the APK game files & Saturn/MegaDrive ROMs from your own copies.
 
 ## Install
 
-Copy the `.nro` and the game files into one folder on the SD card:
+Copy the `.nro` , your APK's `libmain.so` & `libSDL2.so` into the _OpenSpinDrift_nx_ folder on the SD card.
+
+Your Sonic 3D Blast (USA) Sega Saturn ROM & optional Sonic 3D Blast (UE) Sega Genesis ROM go in the `/assets` subfolder
+ROMs must be named `sonic3d-saturn-us.chd` and `sonic3d-gen.md` respectively
 
 ```
 sdmc:/switch/OpenSpinDrift_nx/
@@ -17,6 +20,7 @@ sdmc:/switch/OpenSpinDrift_nx/
 ├── libSDL2.so                    <- optional, see notes
 ├── assets/
 │   ├── sonic3d-saturn-us.chd     <- your disc image (or -eu / -jp)
+│   ├── sonic3d-gen.md            <- your disc image (or -eu / -jp)
 │   └── ...                       <- the rest of the game's assets folder
 ├── save/                         <- created on first launch
 └── controls.ini                  <- created on first launch (button remap)
@@ -119,6 +123,6 @@ which builds on TheOfficialFloW's Vita/Switch work — MIT licensed (see
 
 ## Legal
 
-This project ships no game code and no game assets. OpenSpinDrift and Sonic 3D
-Blast are trademarks of their respective owners. Provide your own legally
-obtained game files.
+This is a fan project and ships no game code and no game assets. Sonic 3D
+Blast are trademarks of SEGA and we hold no affiliation. Provide your own legally
+obtained game files. OpenSpinDrift is another fan project by [Mr. Matt](https://themrmatt.net/)
