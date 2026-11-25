@@ -1,7 +1,10 @@
 # OpenSpinDrift_nx
 
 Nintendo Switch homebrew android wrapper for **[Mr. Matt's OpenSpinDrift (Sonic 3D Blast)](https://themrmatt.net/projects/openspindrift)**.
-This is a small native Android shim: it loads the game's own `libmain.so`, binds
+OpenSpinDrift is a native port of the Sega Saturn version of Sonic 3D Blast with widescreen, the Genesis version’s graphics and sound a button press away, and a Director’s Cut mode. 
+It’s built from a matching decompilation of the Saturn game. The game’s own C code runs natively, the Saturn’s libraries and hardware are replaced with native code, and the parts that were hand-written assembly (the special stage, the movie decoder and the sound driver) are rewritten in C & built for Android.
+
+This "Nintendo Switch Port" is a small native Android shim that loads the original Android APK's own `libmain.so`, binds
 its SDL2/GLES2/libc imports to the Switch build of SDL2 and mesa GLES2, and
 calls its `SDL_main` entry point. The wrapper contains no game code and no game
 data — you have to supply the APK game files & Saturn/MegaDrive ROMs from your own copies.
